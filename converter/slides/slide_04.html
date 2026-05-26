@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Slide 04 — Real image + table + before/after</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  width: 1280px; height: 720px; position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #1a1a1a; background: #ffffff; overflow: hidden;
+}
+.slide { width: 1280px; height: 720px; position: relative; padding: 56px 64px; }
+
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 2px solid #00a86b; }
+.header .title { font-size: 30px; font-weight: 700; color: #1a1a1a; }
+.header .logo { height: 48px; width: auto; object-fit: contain; }
+
+.subtitle { font-size: 18px; color: #6b7280; margin-bottom: 28px; }
+
+.two-col { display: flex; gap: 32px; }
+
+.col {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  background: #ffffff;
+}
+.col.after { border-top: 4px solid #00a86b; }
+.col.before { border-top: 4px solid #94a3b8; }
+
+.col h3 { font-size: 20px; font-weight: 600; margin-bottom: 16px; color: #1f2937; }
+.col.before h3 { color: #64748b; }
+.col.after h3 { color: #047857; }
+
+table { width: 100%; border-collapse: collapse; }
+table th, table td { padding: 10px 8px; font-size: 15px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+table th { color: #6b7280; font-weight: 500; font-size: 13px; text-transform: uppercase; }
+table td:last-child { text-align: right; font-weight: 600; }
+table td.up { color: #047857; }
+
+.footer { position: absolute; left: 64px; bottom: 24px; right: 64px; display: flex; justify-content: space-between; font-size: 12px; color: #9ca3af; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <span class="title">视觉检测模型 v1 → v2 关键指标对比</span>
+      <img class="logo" src="logo_industrialmind.png" alt="logo">
+    </div>
+    <p class="subtitle"><span>在同一批 100 份盲测图纸上，v2 在准确率、召回率、推理延迟三项均有改善</span></p>
+
+    <div class="two-col">
+      <div class="col before">
+        <h3><span>v1 (2026-Q1)</span></h3>
+        <table>
+          <tr><th>指标</th><th>数值</th></tr>
+          <tr><td><span>准确率</span></td><td><span>88.2%</span></td></tr>
+          <tr><td><span>召回率</span></td><td><span>83.5%</span></td></tr>
+          <tr><td><span>p50 延迟</span></td><td><span>504ms</span></td></tr>
+          <tr><td><span>峰值内存</span></td><td><span>2.1 GB</span></td></tr>
+        </table>
+      </div>
+
+      <div class="col after">
+        <h3><span>v2 (2026-Q2)</span></h3>
+        <table>
+          <tr><th>指标</th><th>数值</th></tr>
+          <tr><td><span>准确率</span></td><td class="up"><span>94.7% ▲</span></td></tr>
+          <tr><td><span>召回率</span></td><td class="up"><span>91.2% ▲</span></td></tr>
+          <tr><td><span>p50 延迟</span></td><td class="up"><span>312ms ▼</span></td></tr>
+          <tr><td><span>峰值内存</span></td><td><span>1.8 GB</span></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Source: demo/output/wire_length_list.csv · 100-图纸识别模型综合评估报告</span>
+      <span>© 2026 IndustrialMind AI</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+{
+  "style": "internal",
+  "meta": {
+    "footer": "Copyright @ TaomoAI 2026. Business Confidential"
+  },
+  "slides": [
+    {
+      "layout": "title",
+      "title": "Siemens AI Tracking",
+      "subtitle": "TaomoAI",
+      "date": "2026-04-27",
+      "image": null
+    },
+    {
+      "layout": "toc",
+      "title": "CONTENT",
+      "items": ["用户使用状态汇总", "周度更新汇总", "Next Step", "工作计划"]
+    },
+    {
+      "layout": "kpi_cards",
+      "title": "12.01-12.30 特征错误分类",
+      "headline": "图纸识别总数 181 · 特征识别 11296 · 特征标记错误 76",
+      "cards": [
+        {"value": "181",   "label": "图纸识别总数",   "status": "info"},
+        {"value": "11296", "label": "特征识别数量",   "status": "good"},
+        {"value": "76",    "label": "特征标记错误项", "status": "warn"},
+        {"value": "~45%",  "label": "特征模型能力问题", "status": "bad"}
+      ]
+    },
+    {
+      "layout": "data_table",
+      "title": "特征错误类型汇总",
+      "headline": "Top 9 特征类型与准确率",
+      "columns": ["特征名称", "错误数", "准确率"],
+      "highlight_col": 2,
+      "rows": [
+        ["圆孔",      "15", "91.7%"],
+        ["原材料长度", "9",  "95.0%"],
+        ["腰孔",      "9",  "95.0%"],
+        ["斜角",      "7",  "96.1%"],
+        ["镀银位置",   "6",  "96.7%"],
+        ["圆角",      "4",  "97.8%"],
+        ["矩形孔",    "4",  "97.8%"],
+        ["原材料厚度", "3",  "98.3%"],
+        ["原材料宽度", "3",  "98.3%"]
+      ]
+    },
+    {
+      "layout": "two_col",
+      "title": "模型更新",
+      "left": {
+        "type": "bullets",
+        "heading": "优化目标",
+        "items": [
+          "圆孔特征 — 扩增数据集再次微调（进行中）",
+          "折弯特征 — 从 API 切换至微调（已完成阶段1训练）",
+          "镀银特征 — 从 API 切换至微调（已完成阶段1训练）",
+          "原材料长度、圆角 — 视图切分微调（数据准备中）",
+          "斜角 — 扩增数据集，从 API 切换至微调（数据准备中）"
+        ]
+      },
+      "right": {
+        "type": "bullets",
+        "heading": "数据集准备",
+        "items": [
+          "训练集：原始 750 张 + 12 月新增 110 张",
+          "测试集：原始 50 张 + 12 月新增 60 张",
+          "微调前准确率 82.11%（qwen3-vl-235b-a22b-instruct）",
+          "微调后准确率 95.68% (111/116)"
+        ]
+      }
+    },
+    {
+      "layout": "section",
+      "title": "Next Step",
+      "subtitle": "任务目标 · 工作计划 · 协作流程"
+    },
+    {
+      "layout": "bullets",
+      "title": "Next Step",
+      "subtitle": "任务目标",
+      "items": [
+        {"text": "扩增数据集 + 特征模型微调训练",
+         "sub": ["圆孔特征、镀银特征、斜角"]},
+        {"text": "视图切割模型微调训练",
+         "sub": ["原材料长度、圆角"]},
+        {"text": "折弯：折弯点判断上线，最小长度特征仍手动确认"},
+        {"text": "优先提升上、下分支排类产品的系统特征准确性至 100%"}
+      ]
+    },
+    {
+      "layout": "flow",
+      "title": "工作计划 | 协作流程",
+      "boxes": [
+        {"label": "新图纸",         "color": "green"},
+        {"label": "上传共享文档",    "color": "green"},
+        {"label": "产品解析",       "color": "orange"},
+        {"label": "检查特征错误",    "color": "orange"},
+        {"label": "矫正 & 重新计算", "color": "orange"},
+        {"label": "上传系统",       "color": "green"}
+      ]
+    },
+    {
+      "layout": "thanks",
+      "title": "Thanks",
+      "tagline": "We know manufacturing just like you do",
+      "image": null
+    }
+  ]
+}

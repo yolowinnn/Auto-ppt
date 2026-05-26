@@ -1,0 +1,83 @@
+{
+  "style": "report",
+  "meta": {},
+  "slides": [
+    {
+      "layout": "title",
+      "title": "Siemens 图纸识别模型",
+      "subtitle": "综合准确性评估报告",
+      "scope": "铜排产品线 · 100张图纸测试批次 · 2026年3月",
+      "wordmark": "INDUSTRIALMIND.AI"
+    },
+    {
+      "layout": "kpi_cards",
+      "title": "执行摘要",
+      "headline": "模型在所有特征维度上的加权平均准确率达 97.5%",
+      "cards": [
+        {"value": "97.5%",  "label": "Overall Accuracy",     "status": "good"},
+        {"value": "96.0%",  "label": "Process Route",        "status": "warn"},
+        {"value": "91.0%",  "label": "Bend Detail",          "status": "bad"},
+        {"value": "98.0%",  "label": "Silver Plating",       "status": "good"},
+        {"value": "100.0%", "label": "Hole Features",        "status": "good"},
+        {"value": "100.0%", "label": "Material Dims",        "status": "good"}
+      ],
+      "caption": "15 个特征维度中 10 个达到 100% 完美准确率"
+    },
+    {
+      "layout": "data_table",
+      "title": "评估详情",
+      "headline": "完整特征准确性参考数据表",
+      "columns": ["特征 (英文)", "特征 (中文)", "评估总数", "正确数", "错误数", "准确率"],
+      "highlight_col": 5,
+      "rows": [
+        ["Process Route",         "工艺路线",     "100", "96",  "4", "96.0%"],
+        ["Round Hole",            "圆孔",         "99",  "99",  "0", "100.0%"],
+        ["Waist Hole",            "腰孔",         "99",  "99",  "0", "100.0%"],
+        ["Rectangular Hole",      "矩形孔",       "99",  "99",  "0", "100.0%"],
+        ["Threaded Hole",         "螺纹孔",       "99",  "99",  "0", "100.0%"],
+        ["Fillet",                "圆角",         "100", "100", "0", "100.0%"],
+        ["Chamfer",               "斜角",         "100", "100", "0", "100.0%"],
+        ["Silver Plating Presence","存在镀银",    "100", "96",  "4", "96.0%"],
+        ["Silver Plating Detail", "镀银详情",     "99",  "97",  "2", "98.0%"],
+        ["Bend Detail",           "折弯详情",     "100", "91",  "9", "91.0%"],
+        ["Material Length",       "原材料长度",   "100", "100", "0", "100.0%"],
+        ["Material Width",        "原材料宽度",   "100", "100", "0", "100.0%"],
+        ["Material Thickness",    "原材料厚度",   "100", "100", "0", "100.0%"]
+      ]
+    },
+    {
+      "layout": "two_col",
+      "title": "测试数据集概览",
+      "left": {
+        "type": "table",
+        "heading": "100 张图纸,横跨 17 年 (2008–2025)",
+        "columns": ["指标", "数值"],
+        "rows": [
+          ["测试产品总数", "100"],
+          ["年份跨度",     "2008 – 2025"],
+          ["最多年份",     "2023年（45张, 占45%）"],
+          ["近代 (2019–2025)", "85张 (85%)"],
+          ["历史 (2008–2016)", "15张 (15%)"]
+        ]
+      },
+      "right": {
+        "type": "bullets",
+        "heading": "特征分布情况",
+        "items": [
+          "圆孔 — 83 个产品 (83%)",
+          "折弯 — 80 个产品 (80%)",
+          "镀银 — 66 个产品 (66%)",
+          "腰孔 — 45 个产品 (45%)",
+          "矩形孔 — 34 个产品 (34%)",
+          "螺纹孔 — 10 个产品 (10%)"
+        ]
+      }
+    },
+    {
+      "layout": "thanks",
+      "title": "Thank you",
+      "subtitle": "Siemens 图纸识别模型 · 综合评估报告",
+      "wordmark": "INDUSTRIALMIND.AI"
+    }
+  ]
+}

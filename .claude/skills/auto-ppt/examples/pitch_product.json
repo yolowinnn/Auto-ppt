@@ -1,0 +1,92 @@
+{
+  "style": "pitch",
+  "meta": {
+    "footer": "© 2026 IndustrialMind AI | All Rights Reserved."
+  },
+  "slides": [
+    {
+      "layout": "title",
+      "title": "Intelligent Assembly Action Anomaly Detection",
+      "subtitle": "Process-level Real-time Error Prevention · Zero Defects in Every Step",
+      "author": "Jiawei Li",
+      "affiliation": "AI Engineer  |  IndustrialMind AI"
+    },
+    {
+      "layout": "kpi_cards",
+      "title": "Industry Pain Points",
+      "headline": "CORE PROBLEMS",
+      "cards": [
+        {"value": "Delay",   "label": "Delayed Detection",   "status": "bad"},
+        {"value": "Manual",  "label": "Experience-dependent","status": "warn"},
+        {"value": "Cost",    "label": "Long Training Cycle", "status": "warn"},
+        {"value": "Escape",  "label": "Defect Escape",       "status": "bad"}
+      ],
+      "caption": "\"90% of the cost of quality problems occurs before they are discovered.\""
+    },
+    {
+      "layout": "two_col",
+      "title": "From \"Post\" to \"Instant\": Real-time Action Anomaly Interception",
+      "left": {
+        "type": "image",
+        "path": null,
+        "caption": "Live monitoring screenshot"
+      },
+      "right": {
+        "type": "bullets",
+        "heading": "CORE CAPABILITIES",
+        "items": [
+          "Real-Time Detection",
+          "Instant Alerts",
+          "Auto-Step Jump",
+          "Data Retention"
+        ]
+      }
+    },
+    {
+      "layout": "kpi_cards",
+      "title": "Algorithm Engine Deeply Optimized for Industrial Assembly",
+      "cards": [
+        {"value": "DTW",    "label": "Dynamic Time Warping",   "status": "good"},
+        {"value": "21pt",   "label": "Skeleton Keypoint Track","status": "good"},
+        {"value": "KF",     "label": "Keyframe Matching",      "status": "good"},
+        {"value": "AI-SOP", "label": "AI-Assisted SOP Gen",    "status": "good"}
+      ],
+      "caption": "\"The algorithm doesn't just recognize 'what was done' — it understands 'whether it was done right'.\""
+    },
+    {
+      "layout": "comparison",
+      "title": "The Paradigm Shift: From Post-Remediation to Process Prevention",
+      "before": {
+        "label": "Before (Traditional Model)",
+        "items": [
+          "Post-Process Inspection",
+          "Batch-level Loss",
+          "Hours to Days",
+          "Manual Entry",
+          "Long training cycles"
+        ]
+      },
+      "after": {
+        "label": "After (Intelligent Error Prevention)",
+        "items": [
+          "Real-time Detection",
+          "Zero-Defect Flow",
+          "Seconds",
+          "Full Digital Twin",
+          "Rapid onboarding"
+        ]
+      },
+      "footer_quote": "\"From post-remediation to process error prevention — an upgrade in the quality management paradigm.\""
+    },
+    {
+      "layout": "thanks",
+      "title": "Thank you",
+      "subtitle": "Intelligent Assembly Action Anomaly Detection",
+      "tagline": "Real-time Error Prevention · Full Traceability",
+      "contact": [
+        "✉  jiawei.li@industrialmind.ai",
+        "🌐 www.industrialmind.ai"
+      ]
+    }
+  ]
+}

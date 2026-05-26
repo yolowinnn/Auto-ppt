@@ -1,0 +1,47 @@
+# OS
+.DS_Store
+*.swp
+*~
+
+# Node
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.pytest_cache/
+
+# Playwright cache
+.playwright/
+
+# Editor
+.vscode/
+.idea/
+
+# Claude Code local-only settings (per-machine permission allowlist)
+.claude/settings.local.json
+
+# Customer / business-confidential source material — NEVER push these
+# Raw PDFs, real PPT decks, customer logos all live here and must stay local.
+Data/
+output/
+
+# Large external research clones (keep notes only, not the cloned repo)
+research/PPTAgent/
+
+# Runtime working dirs — keep state.json + plan.json + final.pptx, ignore intermediate
+run/*/screenshots/
+run/*/scores_*.json
+run/*/.tmp/
+run/*/__pycache__/
+
+# Cases folder also contains customer-named benchmark artifacts
+Cases/
+
+# Skill build artifacts inside .claude
+.claude/skills/*/__pycache__/
+.claude/skills/*/output/
