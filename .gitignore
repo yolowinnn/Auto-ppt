@@ -30,6 +30,15 @@ __pycache__/
 Data/
 output/
 
+# Real client run workspaces contain customer-confidential slide content
+# (kept local; only demo01/demo02 are shared as examples). Add client tags here.
+run/siemens_*/
+run/client_*/
+
+# Pipeline state often carries internal IPs / local paths / engagement intent.
+# Keep it local; do not expose on a public repo.
+state.json
+
 # Large external research clones (keep notes only, not the cloned repo)
 research/PPTAgent/
 

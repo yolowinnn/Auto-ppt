@@ -102,6 +102,20 @@ caffeinate -i claude --permission-mode acceptEdits
 - Manus 集成是可选项；默认 `use_manus: false` 走 Claude-only
 - macOS 上 html2pptx 用系统 Chrome (`channel: 'chrome'`)；Chrome 没装会回退 chromium
 
+## 经验沉淀与自动迭代
+
+Auto-PPT 不是静态的——它从**真实做 PPT 遇到的问题**里持续学习：
+
+- [`LESSONS.md`](LESSONS.md) — 实战经验库（按时间累积的「现象/根因/修法」）
+- [`INSIGHTS_INBOX.md`](INSIGHTS_INBOX.md) — 随手记问题/想法的收件箱
+- 每周 cron routine `auto-ppt-weekly-distill` 自动把收件箱 + 最近改动蒸馏成正式经验，晋升进 `DESIGN_RULES.md` / `CAPABILITIES.md`
+
+### 路线图（文章启发，待实现）
+
+- [ ] **资源预生成模块**：按 plan 用图像模型批量生成风格统一的图标集（见 [`pipeline/2_design/ASSET_GENERATION.md`](pipeline/2_design/ASSET_GENERATION.md)）。实测结论：**图标好用、AI 背景图不好用**。
+- [ ] **`hero_statement` 布局**：一句正文 + 一句加粗放大的关键信息（发布会产品页/数据页型），视觉冲击强、易批量。
+- [ ] **style spec 资产化**：把每种品牌风格的参考图 → 规范文档固化，喂给 Module 2。
+
 ## 参考资料
 
 - 调研笔记: [`research/PPTAGENT_NOTES.md`](research/PPTAGENT_NOTES.md)

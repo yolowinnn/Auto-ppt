@@ -38,6 +38,22 @@
 | Glass / blur background | Solid darker color, no blur |
 | Gradient text | Single hex color (pick the dominant one) |
 
+## ⚠️ PPTX 渲染陷阱（CJK 实测，2026-05-28 踩坑）
+
+浏览器渲染 ≠ PowerPoint 渲染。html2pptx 按浏览器测得的盒宽/盒高写死文本框，但 PowerPoint 用 PingFang SC 渲染中文**更宽更高**，且文本框有 ~19px 默认内边距 → 紧凑布局会**换行错位 / 溢出 / 文字撞线**。必须主动留余量：
+
+1. **单行标题/footer 必须给富余宽度**。只加 `white-space: nowrap` 没用（盒宽已写死，框内仍折行）。也不要靠 `padding-right`（会被当文本框内边距，文字区不变宽）。正确做法：给元素**显式 `width`**，比中文实际宽度多留 ~1 倍。
+   - 例：`.title { width: 560px; }`（中文实际约 260px）。flex 里再加 `flex-shrink: 0`。
+2. **固定高度的指标框**（深色大数字块等）：给足 `height` + `align-items: center`，别让多行文字贴着框底，否则 PPTX 里会溢出框外。
+3. **表格表头禁止 `thead { background-color }` + 白字**。单元格背景色会被剥离 → 白字白底变隐形。改用：表头**深色/petrol 文字 + `border-bottom` 下划线**，无填充。
+4. **右对齐多行文字禁止用 `<br>`**。`<br>` + `display:block` span 会让 html2pptx 生成重叠文本框（重复/错位）。改用多个独立 `<p>` 块，各自 `text-align: right; white-space: nowrap;`。
+5. **改完必须用 LibreOffice 回渲染验证**，不能只看 HTML 截图：
+   ```bash
+   soffice --headless --convert-to pdf --outdir out final.pptx
+   pdftoppm -png -r 100 out/final.pdf out/slide   # 然后逐张肉眼检查
+   ```
+   （LibreOffice 预览里中文略毛糙是它没装 PingFang 用了替代字体，不是 PPTX 本身问题；Mac PowerPoint 打开会用 PingFang SC 正常显示。要看的是换行/溢出/隐形文字。）
+
 ## Page setup boilerplate (16:9)
 
 ```html
