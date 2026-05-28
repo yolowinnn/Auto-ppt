@@ -30,10 +30,12 @@ __pycache__/
 Data/
 output/
 
-# Real client run workspaces contain customer-confidential slide content
-# (kept local; only demo01/demo02 are shared as examples). Add client tags here.
-run/siemens_*/
-run/client_*/
+# Run workspaces are local working artifacts and routinely contain
+# client-confidential slide content / extracted numbers / internal paths.
+# Keep ALL runs local — never expose on the public repo. (Was: demo01/demo02
+# leaked Siemens data; purged from history 2026-05-28.)
+run/*
+!run/README.md
 
 # Pipeline state often carries internal IPs / local paths / engagement intent.
 # Keep it local; do not expose on a public repo.
